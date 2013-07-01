@@ -1,0 +1,27 @@
+
+
+<html>
+<body>
+{% if all_entries %}
+    <table border=1>
+        <tr>
+          <th>Name</th>
+          <th>&nbsp;</th>    
+        </tr>
+        {% for message in all_entries %}
+        <tr>
+          <td>
+            
+      {{ message.body_message }}
+      </a>
+          </td>
+                
+        </tr>
+        {% endfor %}    
+    </table>
+
+{% else %}
+    <p>No messages.</p>
+{% endif %}
+<body>
+</html>

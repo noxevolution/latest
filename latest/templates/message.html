@@ -1,0 +1,40 @@
+<html>
+<body bgcolor="808080" text="FFFFFF" link="DD0000" vlink="6600CC">
+
+<h1 STYLE="position:absolute;LEFT:660px;" >Message App</h1>
+
+<form action="" STYLE="position:absolute; TOP:300px;LEFT:625px;" method="post" accept-charset="utf-8">{% csrf_token %}
+
+	{{ body_message }}
+
+</br>
+<input type="submit" value="Submit">
+
+<p STYLE="position:absolute; LEFT:-625px ; top:-300px" >Previous Entries: </br>
+
+{% if all_entries %}
+    <table >
+      
+        {% for message in all_entries %}
+        <tr>
+          <td>
+            
+      {{ message.body_message }}
+      
+          </td>
+                
+        </tr>
+        {% endfor %}    
+    </table>
+
+{% else %}
+    <a>No messages.</a>
+{% endif %}
+</p>
+</form>
+
+</form>
+</body>
+<html>
+
+
